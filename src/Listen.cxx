@@ -64,7 +64,7 @@ listen_systemd_activation(ClientListener &listener)
 static bool
 ListenXdgRuntimeDir(ClientListener &listener) noexcept
 {
-#if defined(USE_XDG) && defined(HAVE_UN)
+#if 0 && defined(USE_XDG) && defined(HAVE_UN)
 	if (geteuid() == 0)
 		/* this MPD instance is a system-wide daemon; don't
 		   use $XDG_RUNTIME_DIR */
