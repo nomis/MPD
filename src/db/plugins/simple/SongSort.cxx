@@ -64,6 +64,7 @@ compare_tag_item(const Tag &a, const Tag &b, TagType type) noexcept
 static bool
 song_cmp(const Song &a, const Song &b) noexcept
 {
+#if 0
 	int ret;
 
 	/* first sort by album */
@@ -80,6 +81,7 @@ song_cmp(const Song &a, const Song &b) noexcept
 	ret = compare_tag_item(a.tag, b.tag, TAG_TRACK);
 	if (ret != 0)
 		return ret < 0;
+#endif
 
 	/* still no difference?  compare file name */
 	return IcuCollate(a.filename, b.filename) < 0;
